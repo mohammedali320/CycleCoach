@@ -28,6 +28,7 @@ A platform for admins (coaches) to create and manage categorized cycling workout
 ```
 ---
 ## File Structure:
+```
 CycleCoach/
 ├── app.js                  # Express app config
 ├── server.js               # Entry point (starts the server)
@@ -65,5 +66,4 @@ CycleCoach/
 │
 └── public/                 # Static assets (CSS, images, JS)
     └── styles.css
-
-
+```
