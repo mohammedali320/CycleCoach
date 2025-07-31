@@ -15,6 +15,7 @@ A platform for admins (coaches) to create and manage categorized cycling workout
 
 
 ## Architecture Diagram:
+```
 ┌──────────────┐    ┌───────────────┐    ┌───────────────┐
 │    User      │    │    category   │    │   workout     │
 │              │    │               │    │               │
@@ -24,8 +25,8 @@ A platform for admins (coaches) to create and manage categorized cycling workout
 │ • schedule[] │    │               │    │ • itensity    │
 │              │    │               │    │ • category    │
 └──────────────┘    └───────────────┘    └───────────────┘
-
-
+```
+---
 ## File Structure:
 CycleCoach/
 ├── app.js                  # Express app config
