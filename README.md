@@ -26,7 +26,7 @@ A platform for admins (coaches) to create and manage categorized cycling workout
 │              │    │               │    │ • category    │
 └──────────────┘    └───────────────┘    └───────────────┘
 ```
----
+
 ## File Structure:
 ```
 CycleCoach/
@@ -67,3 +67,45 @@ CycleCoach/
 └── public/                 # Static assets (CSS, images, JS)
     └── styles.css
 ```
+
+## Auth Routes
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| POST | `/auth/signup` | Create new user | No |
+| POST | `	/auth/login` | Login user | No |
+| POST | `/auth/logout` | Logout user | Yes |
+
+
+## User Routes
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/users/dashboard` | View user dashboard/schedule | Yes |
+| POST | `/users/schedule` | Add workout to schedule | Yes |
+| DELETE | `/users/schedule/:id` | Remove workout from schedule | Yes |
+
+## Category Routes
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/categories` | List all categories | No |
+| GET | `/categories/:id` | View category & workouts | No |
+| POST | `/categories` |Create new category | Yes(admin) |
+| GET | `/categories/:id/edit` | Edit category form | Yes(admin) |
+| PUT | `/categories/:id` | Update category | Yes(admin) |
+| DELETE | `/categories/:id` | Delete category | Yes(admin) |
+
+## Workout Routes
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `	/workouts` | List all workouts | No |
+| GET | `/workouts/:id` | View workout details | No |
+| POST | `/workouts` | Create new workout | Yes(admin) |
+| GET | `/workouts/:id/edit` | Edit workout | Yes(admin) |
+| PUT | `/workouts/:id` | Update workout | Yes(admin) |
+| DELETE | `/workouts/:id` | 	Delete workout | Yes(admin) |
+
+## API Routes
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/api/workouts` | Get all workouts as JSON | No |
+| GET | `/api/categories` | 	Get all categories as JSON | No |
+| GET | `/api/user/schedule` | Get user's schedule as JSON| Yes |
