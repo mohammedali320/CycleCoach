@@ -8,16 +8,16 @@ const viewController={
         res.render('auth/SignIn')
     },
     index(req, res, next){
-        res.render('/workouts/Index', res.locals.data)
+        res.render('workouts/Index', res.locals.data)
     },
     show(req, res, next){
-        res.render('/workouts/Show', res.locals.data)
+        res.render('workouts/Show', res.locals.data)
     },
     edit(req, res, next){
-        res.render('/workouts/Edit', res.locals.data)
+        res.render('workouts/Edit', res.locals.data)
     },
     newView(req, res, next){
-        res.render('/workouts/New', res.locals.data)
+        res.render('workouts/New', res.locals.data)
     },
     redirectHome(req, res, next){
     if(res.locals.data.token){

@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 app.use(express.static('public'))
 app.use(morgan('dev'))
 app.use('/users', userRoutes)
-app.use('/fruits', workoutsRouter)
+app.use('/workouts', workoutsRouter)
 //app.use('/api', apiController)
 
 module.exports = app

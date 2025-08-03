@@ -9,7 +9,7 @@ function Index (props){
             <ul>
                 {
                    workouts.map((workout) => {
-                    return (<li>This is the <a href={`/workouts/${workout.id}?token=${props.token}`}>{workouts.title}</a>, duration {fruit.duration}</li>)
+                    return (<li>workout: <a href={`/workouts/${workout.id}?token=${props.token}`}>{workout.title}</a>, duration: {workout.duration}</li>)
                    }) 
                 }
             </ul>
