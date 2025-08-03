@@ -19,7 +19,7 @@ A platform for admins (coaches) to create and manage categorized cycling workout
 ┌──────────────┐    ┌───────────────┐    ┌───────────────┐
 │    User      │    │    category   │    │   workout     │
 │              │    │               │    │               │
-│ • username   │◄───│ • name        │◄───│ • title       │
+│ • name       │◄───│ • name        │◄───│ • title       │
 │ • email      │    │ • description │    │ • duration    │
 │ • password   │    │ • workouts[]  │    │ • description │
 │ • schedule[] │    │               │    │ • itensity    │
