@@ -35,4 +35,4 @@ const viewController={
   }
 }
 
-module.export=viewController
+module.exports=viewController
