@@ -16,8 +16,13 @@ const viewController={
     edit(req, res, next){
         res.render('workouts/Edit', res.locals.data)
     },
-    newView(req, res, next){
-        res.render('workouts/New', res.locals.data)
+    newView(req, res, next) {
+  // Pass token and category ID (if any) to the view
+    res.locals.data = {
+       token: req.query.token,
+      categoryId: req.query.category || ''
+      };
+      res.render('workouts/New', res.locals.data);
     },
     redirectHome(req, res, next){
     if(res.locals.data.token){

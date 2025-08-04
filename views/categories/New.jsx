@@ -6,8 +6,16 @@ function New(props) {
             <h1>New Category Page</h1>
             <a href={`/categories?token=${props.token}`}>Go back to Index Page</a>
             <form action={`/categories?token=${props.token}`} method="POST">
-                Name: <input type="text" name="name" required /><br />
-                Description: <textarea name="description" required></textarea><br />
+                Name:
+                <select name="name" required>
+                    <option value="Endurance">Endurance</option>
+                    <option value="Tempo">Tempo</option>
+                    <option value="Threshold">Threshold</option>
+                </select>
+                <br />
+                Description:
+                <textarea name="description" required></textarea>
+                <br />
                 <input type="submit" value="Create Category" />
             </form>
         </div>

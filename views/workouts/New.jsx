@@ -9,6 +9,7 @@ function New(props) {
                 Title: <input type="text" name="title" required /><br />
                 Duration (in minutes): <input type="number" name="duration" required /><br />
                 Description: <textarea name="description" required></textarea><br />
+                
                 Intensity:
                 <select name="intensity" required>
                     <option value="">--Select Intensity--</option>
@@ -16,6 +17,15 @@ function New(props) {
                     <option value="Medium">Medium</option>
                     <option value="Hard">Hard</option>
                 </select><br />
+
+                Category:
+                <select name="category" required>
+                    <option value="">--Select Category--</option>
+                    <option value="Endurance">Endurance</option>
+                    <option value="Tempo">Tempo</option>
+                    <option value="Threshold">Threshold</option>
+                </select><br />
+
                 <input type="submit" value="Create Workout" />
             </form>
         </div>
