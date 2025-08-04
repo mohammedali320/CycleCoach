@@ -22,7 +22,7 @@ A platform for admins (coaches) to create and manage categorized cycling workout
 │ • name       │◄───│ • name        │◄───│ • title       │
 │ • email      │    │ • description │    │ • duration    │
 │ • password   │    │ • workouts[]  │    │ • description │
-│ • schedule[] │    │               │    │ • itensity    │
+│ • workouts[] │    │               │    │ • itensity    │
 │              │    │               │    │ • category    │
 └──────────────┘    └───────────────┘    └───────────────┘
 ```
@@ -79,9 +79,9 @@ CycleCoach/
 ## User Routes
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|---------------|
-| GET | `/users/dashboard` | View user dashboard/schedule | Yes |
-| POST | `/users/schedule` | Add workout to schedule | Yes |
-| DELETE | `/users/schedule/:id` | Remove workout from schedule | Yes |
+| GET | `/users/dashboard` | View user dashboard/workouts | Yes |
+| POST | `/users/workouts` | Add workout to workouts | Yes |
+| DELETE | `/users/workouts/:id` | Remove workout from workouts | Yes |
 
 ## Category Routes
 | Method | Endpoint | Description | Auth Required |
@@ -108,4 +108,4 @@ CycleCoach/
 |--------|----------|-------------|---------------|
 | GET | `/api/workouts` | Get all workouts as JSON | No |
 | GET | `/api/categories` | 	Get all categories as JSON | No |
-| GET | `/api/user/schedule` | Get user's schedule as JSON| Yes |
+| GET | `/api/user/workouts` | Get user's workouts as JSON| Yes |

@@ -6,4 +6,4 @@ const categorySchema=new mongoose.Schema({
     workouts: [{type:mongoose.Schema.Types.ObjectId, ref:'Workouts'}]
 })
 
-module.exports=mongoose.model('Workouts',categorySchema)
+module.exports = mongoose.model('Category', categorySchema)

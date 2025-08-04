@@ -23,5 +23,3 @@ function New(props) {
 }
 
 module.exports = New;
-// Category ID(s): <input type="text" name="category" placeholder="Comma-separated IDs" /><br />
-       //         <input type="submit" value="Create Workout" />

@@ -4,6 +4,7 @@ const jsxEngine = require('jsx-view-engine')
 const methodOverride = require('method-override')
 const userRoutes = require('./controllers/auth/routeController')
 const workoutsRouter = require('./controllers/workouts/routeController')
+const categoriesRouter = require('./controllers/categories/routeController')
 //const apiController = require('./routes/apiRoutes')
 const app = express()
 
@@ -21,6 +22,7 @@ app.use(express.static('public'))
 app.use(morgan('dev'))
 app.use('/users', userRoutes)
 app.use('/workouts', workoutsRouter)
+app.use('/categories', categoriesRouter)
 //app.use('/api', apiController)
 
 module.exports = app
