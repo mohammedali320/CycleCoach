@@ -1,7 +1,8 @@
 const mongoose = require("mongoose")
 
 const categorySchema=new mongoose.Schema({
-    name:{ type: String, enum: ['Endurance', 'Tempo', 'Threshold'], required: true },
+   // name:{ type: String, enum: ['Endurance', 'Tempo', 'Threshold','Custom'], required: true },
+    name:{type: String ,required: true},
     description:{type: String ,required: true},
     workouts: [{type:mongoose.Schema.Types.ObjectId, ref:'Workouts'}]
 })

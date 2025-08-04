@@ -5,6 +5,9 @@ function Show(props) {
   const allWorkouts = props.allWorkouts || [];
   const token = props.token;
 
+  // Filter workouts assigned to this category (by name)
+  const filteredWorkouts = allWorkouts.filter(workout => workout.category === category.name);
+
   return (
     <div>
       <h1>{category.name}</h1>
@@ -31,9 +34,9 @@ function Show(props) {
       <hr />
 
       <h2>Workouts in this Category</h2>
-      {category.workouts && category.workouts.length > 0 ? (
+      {filteredWorkouts.length > 0 ? (
         <ul>
-          {category.workouts.map(workout => (
+          {filteredWorkouts.map(workout => (
             <li key={workout._id}>
               <a href={`/workouts/${workout._id}?token=${token}`}>
                 {workout.title} — {workout.duration} min ({workout.intensity})

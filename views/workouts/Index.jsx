@@ -6,6 +6,8 @@ function Index (props){
         <div>
             <h1>Index Page</h1>
             <a href={`/workouts/new?token=${props.token}`}>Create A New workout</a>
+            <div></div>
+            <a href={`/categories?token=${props.token}`}>Go back to Categories</a>
             <ul>
                 {
                    workouts.map((workout) => {

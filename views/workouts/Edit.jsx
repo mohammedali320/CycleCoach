@@ -1,82 +1,51 @@
 const React = require('react');
 
 function Edit(props) {
-  const { title, _id, duration, description, intensity, category } = props.workout;
+    const { _id, title, duration, description, intensity, category } = props.workout;
 
-  return (
-    <div>
-      <h1>{title} Workout Edit Page</h1>
-      <a href={`/workouts?token=${props.token}`}>Go back to workouts Page</a>
-
-      <form action={`/workouts/${_id}?_method=PUT&token=${props.token}`} method="POST">
+    return (
         <div>
-          <label htmlFor="title">Title: </label><br />
-          <input
-            type="text"
-            id="title"
-            name="title"
-            defaultValue={title}
-            required
-          />
-        </div>
+            <h1>Edit Workout: {title}</h1>
+            <a href={`/workouts?token=${props.token}`}>Go back to Workouts Page</a>
+            <form action={`/workouts/${_id}?_method=PUT&token=${props.token}`} method="POST">
+                <label>
+                    Title:
+                    <input type="text" name="title" defaultValue={title} required /><br/>
+                </label>
+                <br />
 
-        <div>
-          <label htmlFor="duration">Duration (in minutes): </label><br />
-          <input
-            type="number"
-            id="duration"
-            name="duration"
-            defaultValue={duration}
-            min="1"
-            required
-          />
-        </div>
+                <label>
+                    Duration (minutes):
+                    <input type="number" name="duration" defaultValue={duration} required /><br/>
+                </label>
+                <br />
 
-        <div>
-          <label htmlFor="description">Description: </label><br />
-          <textarea
-            id="description"
-            name="description"
-            defaultValue={description}
-            required
-          />
-        </div>
+                <label>
+                    Description:
+                    <input type="text" name="description" defaultValue={description} required /><br/>
+                </label>
+                <br />
 
-        <div>
-          <label htmlFor="intensity">Intensity: </label><br />
-          <select
-            id="intensity"
-            name="intensity"
-            defaultValue={intensity}
-            required
-          >
-            <option value="">--Select Intensity--</option>
-            <option value="Easy">Easy</option>
-            <option value="Medium">Medium</option>
-            <option value="Hard">Hard</option>
-          </select>
-        </div>
+                <label>
+                    Intensity:
+                    <select name="intensity" defaultValue={intensity} required>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select><br/>
+                </label>
+                <br />
 
-        <div>
-          <label htmlFor="category">Category: </label><br />
-          <select
-            id="category"
-            name="category"
-            defaultValue={category}
-            required
-          >
-            <option value="">--Select Category--</option>
-            <option value="Endurance">Endurance</option>
-            <option value="Tempo">Tempo</option>
-            <option value="Threshold">Threshold</option>
-          </select>
-        </div>
+                <label>
+                    Category:
+                    <input type="text" name="category" defaultValue={category} required /><br/>
+                </label>
+                <br />
 
-        <br />
-        <input type="submit" value="Update Workout" />
-      </form>
-    </div>
-  );
+                <input type="submit" value="Update Workout" />
+            </form>
+        </div>
+    );
 }
 
 module.exports = Edit;

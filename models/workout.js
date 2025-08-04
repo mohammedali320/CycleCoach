@@ -5,7 +5,7 @@ const workoutsSchema=new mongoose.Schema({
     duration:{type: Number ,required: true},
     description:{type: String ,required: true},
     intensity:   { type: String, enum: ['Easy', 'Medium', 'Hard'], required: true },
-    category:{ type: String, enum: ['Endurance', 'Tempo', 'Threshold'], required: true },
+    category:{type: String ,required: true},
 })
 
 module.exports=mongoose.model('Workouts',workoutsSchema)

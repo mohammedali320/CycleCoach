@@ -17,14 +17,8 @@ function New(props) {
                     <option value="Medium">Medium</option>
                     <option value="Hard">Hard</option>
                 </select><br />
-
                 Category:
-                <select name="category" required>
-                    <option value="">--Select Category--</option>
-                    <option value="Endurance">Endurance</option>
-                    <option value="Tempo">Tempo</option>
-                    <option value="Threshold">Threshold</option>
-                </select><br />
+                <input type="text" name="category" required/><br/>
 
                 <input type="submit" value="Create Workout" />
             </form>
