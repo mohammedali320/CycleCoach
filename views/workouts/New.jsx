@@ -1,9 +1,9 @@
 const React = require('react');
-
+const Layout= require('../Layouts/Layout')
 function New(props) {
     return (
-        <div>
-            <h1>New Workout Page</h1>
+        <Layout token={props.token}>
+            <h>New Workout Page</h>
             <a href={`/workouts?token=${props.token}`}>Go back to Index Page</a>
             <form action={`/workouts?token=${props.token}`} method="POST">
                 Title: <input type="text" name="title" required /><br />
@@ -22,7 +22,7 @@ function New(props) {
 
                 <input type="submit" value="Create Workout" />
             </form>
-        </div>
+        </Layout>
     );
 }
 

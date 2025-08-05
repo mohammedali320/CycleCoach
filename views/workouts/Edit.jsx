@@ -1,12 +1,12 @@
 const React = require('react');
+const Layout= require('../Layouts/Layout')
 
 function Edit(props) {
     const { _id, title, duration, description, intensity, category } = props.workout;
 
     return (
-        <div>
-            <h1>Edit Workout: {title}</h1>
-            <a href={`/workouts?token=${props.token}`}>Go back to Workouts Page</a>
+        <Layout token={props.token}>
+            <h>Edit Workout: {title}</h>
             <form action={`/workouts/${_id}?_method=PUT&token=${props.token}`} method="POST">
                 <label>
                     Title:
@@ -44,7 +44,7 @@ function Edit(props) {
 
                 <input type="submit" value="Update Workout" />
             </form>
-        </div>
+        </Layout>
     );
 }
 

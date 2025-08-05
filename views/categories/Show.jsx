@@ -1,4 +1,5 @@
 const React = require('react');
+const Layout= require('../Layouts/Layout')
 
 function Show(props) {
   const category = props.category;
@@ -9,9 +10,8 @@ function Show(props) {
   const filteredWorkouts = allWorkouts.filter(workout => workout.category === category.name);
 
   return (
-    <div>
-      <h1>{category.name}</h1>
-      <a href={`/categories?token=${token}`}>Go back to Categories</a>
+    <Layout token={props.token}>
+      <h>{category.name}</h>
 
       <p><strong>Description:</strong> {category.description}</p>
 
@@ -64,7 +64,7 @@ function Show(props) {
       ) : (
         <p>No workouts found.</p>
       )}
-    </div>
+    </Layout>
   );
 }
 

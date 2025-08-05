@@ -1,23 +1,23 @@
 const React = require('react')
+const Layout= require('../Layouts/Layout')
 
 function Index (props){
     const categories = props.categories || []
       const token = props.token;
     return (
-        <div>
-            <h1>categories Page</h1>
-            <a href={`/categories/new?token=${props.token}`}>Create A New category</a>
+        <Layout token={props.token}>
+            <h>categories Page</h>
             <div></div>
-            <a href={`/users/schedule?token=${token}`}>My Schedule</a>
+            <a href={`/categories/new?token=${props.token}`}>Create A New category</a>
 
             <ul>
                 {
                    categories.map((category) => {
-                    return (<li>category: <a href={`/categories/${category.id}?token=${props.token}`}>{category.name}</a>, description: {category.description}</li>)
+                    return (<li>Category: <a href={`/categories/${category.id}?token=${props.token}`}>{category.name}</a></li>)
                    }) 
                 }
             </ul>
-        </div>
+        </Layout>
     )
 }
 

@@ -1,4 +1,5 @@
 const React = require('react');
+const Layout= require('../Layouts/Layout')
 
 function Schedule(props) {
   const user = props.user;
@@ -6,9 +7,9 @@ function Schedule(props) {
   const token = props.token;
 
   return (
+    <Layout token={props.token}>
+      <h>{user.name}'s Workouts Schedule</h>
     <div>
-      <h1>{user.name}'s Workout Schedule</h1>
-      <a href={`/categories?token=${token}`}>Back to Categories</a>
 
       {workouts.length > 0 ? (
         <ul>
@@ -25,6 +26,7 @@ function Schedule(props) {
         <p>No workouts added to your schedule yet.</p>
       )}
     </div>
+    </Layout>
   );
 }
 

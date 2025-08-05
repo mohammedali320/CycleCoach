@@ -1,14 +1,13 @@
 const React = require('react');
+const Layout= require('../Layouts/Layout')
 
 function Show(props) {
   const workout = props.workout;
   const token = props.token;
 
-  
   return (
-    <div>
-      <h1>{workout.title}</h1>
-      <a href={`/workouts?token=${props.token}`}>Go back to workouts Page</a>
+    <Layout token={props.token}>
+      <h>{workout.title}</h>
       
       <p><strong>Duration:</strong> {workout.duration} minutes</p>
       <p><strong>Description:</strong> {workout.description}</p>
@@ -32,7 +31,7 @@ function Show(props) {
           <button>{`Edit this ${workout.title}`}</button>
         </a>
       </div>
-    </div>
+    </Layout>
   );
 }
 

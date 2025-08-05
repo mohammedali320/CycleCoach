@@ -1,13 +1,13 @@
 const React = require('react')
+const Layout= require('../Layouts/Layout')
 
 function Index (props){
     const workouts = props.workouts
+    const token = props.token;
     return (
-        <div>
-            <h1>Index Page</h1>
-            <a href={`/workouts/new?token=${props.token}`}>Create A New workout</a>
-            <div></div>
-            <a href={`/categories?token=${props.token}`}>Go back to Categories</a>
+        <Layout token={props.token}>
+            <h>Added workouts:</h>
+
             <ul>
                 {
                    workouts.map((workout) => {
@@ -15,7 +15,7 @@ function Index (props){
                    }) 
                 }
             </ul>
-        </div>
+        </Layout>
     )
 }
 
