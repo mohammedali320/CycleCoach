@@ -10,6 +10,7 @@ router.post('/login', dataController.loginUser, categoriesViewController.redirec
 router.get('/login', viewController.signIn) // show login form
 router.put('/:id', dataController.updateUser)
 router.delete('/:id', dataController.auth, dataController.deleteUser)
+router.get('/schedule',dataController.auth,dataController.showUserSchedule,viewController.showSchedule);
 
 
 module.exports = router

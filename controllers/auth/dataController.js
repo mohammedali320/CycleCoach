@@ -76,3 +76,12 @@ exports.deleteUser = async (req, res) => {
     res.status(400).json({message: error.message})
   }
 }
+exports.showUserSchedule = async (req, res, next) => {
+  try {
+    const user = await req.user.populate('workouts');
+    res.locals.data.user = user;
+    next();
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};

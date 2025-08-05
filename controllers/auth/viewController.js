@@ -11,7 +11,15 @@ const viewController = {
   redirectToLogin(req, res, next){
     res.redirect('/users/login')
   },
+
   
+  showSchedule(req, res, next) {
+  res.render('auth/Schedule', {
+    user: res.locals.data.user,
+    token: req.query.token
+  });
+}
+
 }
 
 module.exports = viewController

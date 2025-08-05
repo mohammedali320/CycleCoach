@@ -2,10 +2,13 @@ const React = require('react')
 
 function Index (props){
     const categories = props.categories || []
+      const token = props.token;
     return (
         <div>
             <h1>categories Page</h1>
             <a href={`/categories/new?token=${props.token}`}>Create A New category</a>
+            <a href={`/users/schedule?token=${token}`}>My Schedule</a>
+
             <ul>
                 {
                    categories.map((category) => {
