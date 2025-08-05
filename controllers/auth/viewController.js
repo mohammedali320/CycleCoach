@@ -11,14 +11,19 @@ const viewController = {
   redirectToLogin(req, res, next){
     res.redirect('/users/login')
   },
-
-  
   showSchedule(req, res, next) {
   res.render('auth/Schedule', {
     user: res.locals.data.user,
     token: req.query.token
   });
+},
+viewScheduleWorkout(req, res, next) {
+  res.render('auth/ViewWorkout', {
+    workout: res.locals.data.workout,
+    token: req.query.token
+  });
 }
+
 
 }
 

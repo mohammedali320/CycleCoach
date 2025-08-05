@@ -68,6 +68,19 @@ dataController.addToUser = async (req, res) => {
     res.status(400).send({ message: error.message });
   }
 };
+dataController.removeFromUser = async (req, res) => {
+  try {
+    const workoutId = req.params.id;
+    const user = req.user;
+
+    user.workouts = user.workouts.filter(id => id.toString() !== workoutId);
+    await user.save();
+
+    res.redirect(`/users/schedule?token=${req.query.token}`);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
 
 
 module.exports = dataController

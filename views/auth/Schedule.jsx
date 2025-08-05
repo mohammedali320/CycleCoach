@@ -14,9 +14,10 @@ function Schedule(props) {
         <ul>
           {workouts.map(workout => (
             <li key={workout._id}>
-              <a href={`/workouts/${workout._id}?token=${token}`}>
+              <a href={`/users/schedule/workout/${workout._id}?token=${token}`}>
                 {workout.title} — {workout.duration} min ({workout.intensity})
               </a>
+
             </li>
           ))}
         </ul>
