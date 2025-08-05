@@ -22,5 +22,7 @@ router.post('/', authDataController.auth, dataController.create, viewController.
 router.get('/:id/edit',authDataController.auth, dataController.show, viewController.edit);
 // Show
 router.get('/:id', authDataController.auth,dataController.show, viewController.show);
+//add workouts to user schedule
+router.post('/add/:id', authDataController.auth, dataController.addToUser);
 // export router
 module.exports = router;

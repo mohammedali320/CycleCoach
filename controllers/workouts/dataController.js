@@ -54,5 +54,20 @@ dataController.show = async (req, res, next) => {
     }
 }
 
+dataController.addToUser = async (req, res) => {
+  try {
+    const workoutId = req.params.id;
+    const user = req.user;
+    // Prevent duplicates
+    if (!user.workouts.includes(workoutId)) {
+      user.workouts.addToSet(workoutId);
+      await user.save();
+    }
+    res.redirect(`/workouts/${workoutId}?token=${req.query.token}`);
+  } catch (error) {
+    res.status(400).send({ message: error.message });
+  }
+};
+
 
 module.exports = dataController

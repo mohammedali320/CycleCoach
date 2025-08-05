@@ -12,6 +12,7 @@ const viewController={
     },
     show(req, res, next){
         res.render('workouts/Show', res.locals.data)
+        token: req.query.token || ''
     },
     edit(req, res, next){
         res.render('workouts/Edit', res.locals.data)

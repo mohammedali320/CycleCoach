@@ -11,4 +11,5 @@ router.get('/login', viewController.signIn) // show login form
 router.put('/:id', dataController.updateUser)
 router.delete('/:id', dataController.auth, dataController.deleteUser)
 
+
 module.exports = router
