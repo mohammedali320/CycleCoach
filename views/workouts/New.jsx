@@ -1,27 +1,30 @@
 const React = require('react');
-const Layout= require('../Layouts/Layout')
+const Layout = require('../Layouts/Layout')
 function New(props) {
     return (
         <Layout token={props.token}>
-            <h>New Workout Page</h>
-            <a href={`/workouts?token=${props.token}`}>Go back to Index Page</a>
-            <form action={`/workouts?token=${props.token}`} method="POST">
-                Title: <input type="text" name="title" required /><br />
-                Duration (in minutes): <input type="number" name="duration" required /><br />
-                Description: <textarea name="description" required></textarea><br />
-                
-                Intensity:
-                <select name="intensity" required>
-                    <option value="">--Select Intensity--</option>
-                    <option value="Easy">Easy</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Hard">Hard</option>
-                </select><br />
-                Category:
-                <input type="text" name="category" required/><br/>
+            <div className="form-box">
+                <h2>New Workout Page</h2>
+                <div id='schedule'>
+                    <form action={`/workouts?token=${props.token}`} method="POST">
+                        Title: <input className='sameSize' type="text" name="title" required /><br />
+                        Duration (in minutes): <input className='sameSize' type="number" name="duration" required /><br />
+                        Description: <input className="descrp" type='text' required /><br />
 
-                <input type="submit" value="Create Workout" />
-            </form>
+                        Intensity:
+                        <select className='sameSize' name="intensity" required>
+                            <option value="">--Select Intensity--</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select><br />
+                        Category:
+                        <input className='sameSize' type="text" name="category" required /><br />
+
+                        <input className="BtnStyle" type="submit" value="Create Workout" />
+                    </form>
+                </div>
+            </div>
         </Layout>
     );
 }
