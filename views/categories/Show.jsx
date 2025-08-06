@@ -30,7 +30,7 @@ function Show(props) {
 
           <div style={{ marginTop: '20px' }}>
             <a href={`/workouts/new?category=${category._id}&token=${token}`}>
-              <button className="BtnStyle">Add Workout to This Category</button>
+              <button className="BtnStyle">Add Workout</button>
             </a>
           </div>
 
