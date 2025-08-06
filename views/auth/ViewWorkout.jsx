@@ -1,5 +1,5 @@
 const React = require('react');
-const Layout= require('../Layouts/Layout')
+const Layout = require('../Layouts/Layout')
 
 function ViewWorkout(props) {
   const workout = props.workout;
@@ -7,17 +7,24 @@ function ViewWorkout(props) {
 
   return (
     <Layout token={props.token}>
-      <h>{workout.title}</h>
-      {/*<a href={`/users/schedule?token=${token}`}>← Back to My Schedule</a>*/}
+      <div className="form-box">
+        <div id='schedule'>
+          <h2>{workout.title}</h2>
 
-      <p><strong>Duration:</strong> {workout.duration} minutes</p>
-      <p><strong>Description:</strong> {workout.description}</p>
-      <p><strong>Intensity:</strong> {workout.intensity}</p>
+          <p><strong>Duration:</strong> <span class='span'>{workout.duration} minutes</span></p>
+          <p><strong>Description:</strong> <span class='span'>{workout.description}</span></p>
+          <p><strong>Intensity:</strong> <span class='span'>{workout.intensity}</span></p>
 
-      {/* remove from schedule only */}
-      <form action={`/workouts/remove/${workout._id}?token=${token}`} method="POST">
-        <button type="submit">Remove from My Schedule</button>
-      </form>
+          {/* remove from schedule only */}
+          <form action={`/workouts/remove/${workout._id}?token=${token}`} method="POST">
+            <div className="divRemFromSch">
+                        <button type="submit" className="RemFromSch">
+                            Remove from My Schedule
+                        </button>
+                    </div>
+          </form>
+        </div>
+      </div>
     </Layout>
   );
 }

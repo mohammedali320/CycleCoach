@@ -6,15 +6,18 @@ function Index (props){
     const token = props.token;
     return (
         <Layout token={props.token}>
-            <h>Added workouts:</h>
-
-            <ul>
+            <div className="form-box">
+            <h2>Added workouts:</h2>
+            <div id='schedule'>
+            <ul id='things'>
                 {
                    workouts.map((workout) => {
-                    return (<li>workout: <a href={`/workouts/${workout.id}?token=${props.token}`}>{workout.title}</a>, duration: {workout.duration}</li>)
+                    return (<li id='cat'>workout: <a id='thing' href={`/workouts/${workout.id}?token=${props.token}`}>{workout.title}</a>, duration: {workout.duration}</li>)
                    }) 
                 }
             </ul>
+            </div>
+            </div>
         </Layout>
     )
 }
