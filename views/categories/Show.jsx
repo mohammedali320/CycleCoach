@@ -15,7 +15,22 @@ function Show(props) {
         <h2>{category.name}</h2>
         <div className='in-box'>
           <p><span class='discription'>Description: </span>{category.description}</p>
-
+          <hr />
+          <h2>Workouts in this Category</h2>
+          {filteredWorkouts.length > 0 ? (
+            <ul>
+              {filteredWorkouts.map(workout => (
+                <li id='things' key={workout._id}>
+                  <a id='thing' href={`/workouts/${workout._id}?token=${token}`}>
+                    {workout.title} — {workout.duration} min ({workout.intensity})
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No workouts in this category yet.</p>
+          )}
+          <hr />
           <div>
             <form action={`/categories/${category._id}?_method=DELETE&token=${token}`} method="POST">
               <input className="BtnStyle" type="submit" value={`Delete this Cat`} />
@@ -33,24 +48,6 @@ function Show(props) {
               <button className="BtnStyle">Add Workout</button>
             </a>
           </div>
-
-          <hr />
-
-          <h2>Workouts in this Category</h2>
-          {filteredWorkouts.length > 0 ? (
-            <ul>
-              {filteredWorkouts.map(workout => (
-                <li id='things' key={workout._id}>
-                  <a id='thing' href={`/workouts/${workout._id}?token=${token}`}>
-                    {workout.title} — {workout.duration} min ({workout.intensity})
-                  </a>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No workouts in this category yet.</p>
-          )}
-
         </div>
       </div>
     </Layout>

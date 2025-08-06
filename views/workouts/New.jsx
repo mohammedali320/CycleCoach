@@ -9,7 +9,7 @@ function New(props) {
                     <form action={`/workouts?token=${props.token}`} method="POST">
                         Title: <input className='sameSize' type="text" name="title" required /><br />
                         Duration (in minutes): <input className='sameSize' type="number" name="duration" required /><br />
-                        Description: <input className="descrp" type='text' required /><br />
+                        Description: <input className="descrp" type="text" name="description" required /><br />
 
                         Intensity:
                         <select className='sameSize' name="intensity" required>

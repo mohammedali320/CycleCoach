@@ -14,12 +14,11 @@ function Show(props) {
           <p><strong>Description:</strong> {workout.description}</p>
           <p><strong>Intensity:</strong> {workout.intensity}</p>
           <p><strong>Category:</strong> {workout.category}</p>
-
+          <hr />
           <form action={`/workouts/${workout._id}?_method=DELETE&token=${props.token}`} method="POST">
             <input className="BtnStyle" type="submit" value={`Delete this workout`} />
           </form>
           <div style={{ marginTop: '20px' }}>
-            {/* Add to user Schedule (workouts) */}
             <form
               action={`/workouts/add/${workout._id}?token=${token}`}
               method="POST"
