@@ -1,16 +1,53 @@
 const React = require('react')
+const Layout2= require('../Layouts/Layout2')
 
 function SignUp (props) {
     return(
-        <div>
-            <h1>Sign Up To CycleCoach</h1>
-            <form action="/users" method="POST">
-                Name: <input type="text" name="name" /><br/>
-                Email: <input type="email" name="email" /><br/>
-                Password: <input type="password" name="password" /><br/>
-                <input type="submit" value="Submit to Register" />
-            </form>
-        </div>
+        <Layout2>
+            <div className="form-container">
+              <div className="form-box">
+               <h1>CycleCoach</h1>
+               <h2>Sign Up</h2>
+               <form action="/users" method="POST">
+                <div className="form-group">
+                    <label htmlFor="name">Full Name:</label>
+                    <input 
+                        type="text" 
+                        id="name"
+                        name="name" 
+                        placeholder="Enter your full name..."
+                        required 
+                    />
+                </div>
+                <div className="form-group">
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your Email..."
+                            required
+                        />
+                    </div>
+                <div className="form-group">
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your Password..."
+                            required
+                        />
+                    </div>  
+                <div className="divSignUp">
+                        <button type="submit" className="signUp">
+                            Sign Up
+                        </button>
+                    </div>  
+               </form>
+              </div>
+            </div>
+        </Layout2>
     )
 }
 

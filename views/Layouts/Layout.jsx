@@ -9,15 +9,15 @@ function Layout(props) {
                 <link rel="stylesheet" href="/styles.css" />
             </head>
             <body>
-                <header>
+                <div className="container">
                     <h1>CycleCoach</h1>
                     <nav>
-                        <a href={`/users/schedule?token=${props.token}`}>My Schedule</a>
-                        <a href={`/categories?token=${props.token}`}>Categories</a>
-                        <a href={`/workouts?token=${props.token}`}>Added workouts</a>
-                        <a href={`/workouts/new?token=${props.token}`}>New workout</a>
+                        <a id='nv' href={`/users/schedule?token=${props.token}`}>My Schedule</a>
+                        <a id='nv' href={`/categories?token=${props.token}`}>Categories</a>
+                        <a id='nv' href={`/workouts?token=${props.token}`}>Added workouts</a>
+                        <a id='nv' href={`/workouts/new?token=${props.token}`}>New workout</a>
                     </nav>
-                </header>
+                </div>
                 {props.children}
             </body>
         </html>
