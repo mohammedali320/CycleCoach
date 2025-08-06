@@ -8,7 +8,7 @@ A platform for cyclist to create and manage categorized cycling workouts. Users 
 ## Features
 - Categorized workout browser (endurance, threshold, etc.)
 - Workout detail view (title, duration, intensity)
-- Admin panel to create/edit/delete workouts
+- User cancreate/edit/delete workouts and categories
 - User registration and login
 - Add workouts to personal schedule
 
