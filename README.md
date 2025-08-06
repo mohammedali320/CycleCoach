@@ -32,6 +32,8 @@ A platform for cyclist to create and manage categorized cycling workouts. Users 
 CycleCoach/
 ├── app.js                  # Express app config
 ├── server.js               # Entry point (starts the server)
+├── .env
+├── .gitignore
 │
 ├── models/
 │   ├── user.js             # User model with JWT
@@ -43,17 +45,17 @@ CycleCoach/
 │   ├── auth/
 │   │   ├── dataController.js    # User auth logic (login, register)
 │   │   ├── viewController.js    # View logic
-│   │   ├── apiController.js     # API responses
 │   │   └── routeController.js   # user routes
 │   │
-│   └── workouts/
-│       ├── dataController.js    # Workout/category logic
-│       ├── viewController.js    # workout/category view logic
-│       ├── apiController.js     # API (/api/workouts)
-│       └── routeController.js   # Routes (/workouts, /categories)
-│
-├── routes/
-│   └── apiRoutes.js        # All /api routes grouped here
+│   ├── workouts/
+│   │    ├── dataController.js    # Workout logic
+│   │    ├── viewController.js    # workout view logic
+│   │    └── routeController.js   # Routes (/workouts)
+│   │
+│   └── categories/
+│        ├── dataController.js    # category logic
+│        ├── viewController.js    # category view logic
+│        └── routeController.js   # Routes (/categories)
 │
 ├── views/
 │   ├── auth/               # Login/register pages
@@ -64,48 +66,39 @@ CycleCoach/
 ├── tests/                  # Jest test files
 │   ├── auth.test.js
 │
-└── public/                 # Static assets (CSS, images, JS)
+└── public/
+    ├── BG.png   
+    ├── styles2.css             
     └── styles.css
 ```
 
 ## Auth Routes
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|---------------|
-| POST | `/auth/signup` | Create new user | No |
+| POST | `/auth` | Create new user | No |
+| GET | `	/auth` | 	Show signup form | No |
 | POST | `	/auth/login` | Login user | No |
-| POST | `/auth/logout` | Logout user | Yes |
+| GET | `/auth/login` | Show login form | No |
+| PUT | `/auth/:id` | Update user | No |
+| DELETE | `/auth/:id` | Delete user | Yes |
+| GET | `/auth/schedule` | 	View user's workout schedule | Yes |
+| GET | `/auth/schedule/workout/:id` | 	View specific workout in schedule | Yes |
 
-
-## User Routes
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| GET | `/users/dashboard` | View user dashboard/workouts | Yes |
-| POST | `/users/workouts` | Add workout to workouts | Yes |
-| DELETE | `/users/workouts/:id` | Remove workout from workouts | Yes |
 
 ## Category Routes
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|---------------|
-| GET | `/categories` | List all categories | No |
+| GET | `/categories` | List all categories | Yes |
+| GET | `/categories/new` | Create new category | Yes |
 | GET | `/categories/:id` | View category & workouts | No |
-| POST | `/categories` |Create new category | Yes(admin) |
-| GET | `/categories/:id/edit` | Edit category form | Yes(admin) |
-| PUT | `/categories/:id` | Update category | Yes(admin) |
-| DELETE | `/categories/:id` | Delete category | Yes(admin) |
+| PUT | `/categories/:id/edit` | Edit category form | Yes |
+| DELETE | `/categories/:id` | Delete category | Yes |
 
 ## Workout Routes
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|---------------|
-| GET | `	/workouts` | List all workouts | No |
-| GET | `/workouts/:id` | View workout details | No |
-| POST | `/workouts` | Create new workout | Yes(admin) |
-| GET | `/workouts/:id/edit` | Edit workout | Yes(admin) |
-| PUT | `/workouts/:id` | Update workout | Yes(admin) |
-| DELETE | `/workouts/:id` | 	Delete workout | Yes(admin) |
-
-## API Routes
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| GET | `/api/workouts` | Get all workouts as JSON | No |
-| GET | `/api/categories` | 	Get all categories as JSON | No |
-| GET | `/api/user/workouts` | Get user's workouts as JSON| Yes |
+| GET | `	/workouts` | List all workouts | Yes |
+| GET | `/workouts/:id` | View workout details | Yes |
+| POST | `/workouts/new` | Create new workout | Yes |
+| PUT | `/workouts/:id/edit` | Edit workout | Yes |
+| DELETE | `/workouts/:id` | 	Delete workout | Yes |

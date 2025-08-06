@@ -24,20 +24,6 @@ dataController.create = async (req, res, next) => {
   }
 };
 
-// Show a single category
-// dataController.show = async (req, res, next) => {
-//   try {
-//     const category = await Category.findById(req.params.id);
-//     if (!category) {
-//       throw new Error(`Could not find a category with ID ${req.params.id}`);
-//     }
-//     res.locals.data.category = category;
-//     next();
-//   } catch (error) {
-//     res.status(400).send({ message: error.message });
-//   }
-// };
-
 
 dataController.show = async (req, res, next) => {
   try {
