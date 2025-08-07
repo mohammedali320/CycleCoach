@@ -12,7 +12,8 @@ A platform for cyclist to create and manage categorized cycling workouts. Users 
 - User registration and login
 - Add workouts to personal schedule
 
-
+## 🎯 App Preview
+![Categories page](public/Categories.png)
 
 ## Architecture Diagram:
 ```
