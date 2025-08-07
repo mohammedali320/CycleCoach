@@ -76,14 +76,11 @@ CycleCoach/
 ## Auth Routes
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|---------------|
-| POST | `/auth` | Create new user | No |
-| GET | `	/auth` | 	Show signup form | No |
-| POST | `	/auth/login` | Login user | No |
-| GET | `/auth/login` | Show login form | No |
-| PUT | `/auth/:id` | Update user | No |
-| DELETE | `/auth/:id` | Delete user | Yes |
-| GET | `/auth/schedule` | 	View user's workout schedule | Yes |
-| GET | `/auth/schedule/workout/:id` | 	View specific workout in schedule | Yes |
+| POST | `/users` | Create new user | No |
+| POST | `/users/login` | Login user | No |
+| DELETE | `/users/:id` | Delete user | Yes |
+| GET | `/users/schedule` | 	View user's workout schedule | Yes |
+| GET | `/users/schedule/workout/:id` | 	View specific workout in schedule | Yes |
 
 
 ## Category Routes
